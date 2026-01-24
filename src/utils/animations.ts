@@ -1,6 +1,6 @@
-// Framer Motion Animation Variants and Utilities
+import type { Variants, TargetAndTransition } from 'framer-motion';
 
-export const fadeIn = {
+export const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -8,7 +8,7 @@ export const fadeIn = {
   }
 };
 
-export const slideUp = {
+export const slideUp: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
@@ -17,7 +17,7 @@ export const slideUp = {
   }
 };
 
-export const slideDown = {
+export const slideDown: Variants = {
   hidden: { opacity: 0, y: -50 },
   visible: {
     opacity: 1,
@@ -26,7 +26,7 @@ export const slideDown = {
   }
 };
 
-export const slideLeft = {
+export const slideLeft: Variants = {
   hidden: { opacity: 0, x: 50 },
   visible: {
     opacity: 1,
@@ -35,7 +35,7 @@ export const slideLeft = {
   }
 };
 
-export const slideRight = {
+export const slideRight: Variants = {
   hidden: { opacity: 0, x: -50 },
   visible: {
     opacity: 1,
@@ -44,7 +44,7 @@ export const slideRight = {
   }
 };
 
-export const scaleIn = {
+export const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
@@ -53,7 +53,7 @@ export const scaleIn = {
   }
 };
 
-export const staggerContainer = {
+export const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -64,7 +64,7 @@ export const staggerContainer = {
   }
 };
 
-export const staggerItem = {
+export const staggerItem: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -74,18 +74,18 @@ export const staggerItem = {
 };
 
 // Hover animations
-export const hoverScale = {
+export const hoverScale: TargetAndTransition = {
   scale: 1.05,
   transition: { duration: 0.3, ease: "easeInOut" }
 };
 
-export const hoverLift = {
+export const hoverLift: TargetAndTransition = {
   y: -10,
   transition: { duration: 0.3, ease: "easeOut" }
 };
 
 // Continuous animations
-export const floatAnimation = {
+export const floatAnimation: TargetAndTransition = {
   y: [0, -20, 0],
   transition: {
     duration: 6,
@@ -94,7 +94,7 @@ export const floatAnimation = {
   }
 };
 
-export const rotateAnimation = {
+export const rotateAnimation: TargetAndTransition = {
   rotate: [0, 360],
   transition: {
     duration: 20,
@@ -104,7 +104,7 @@ export const rotateAnimation = {
 };
 
 // Typewriter effect utility
-export const typewriterVariants = {
+export const typewriterVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -114,7 +114,7 @@ export const typewriterVariants = {
   }
 };
 
-export const letterVariants = {
+export const letterVariants: Variants = {
   hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,

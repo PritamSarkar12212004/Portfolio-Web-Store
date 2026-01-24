@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaGooglePlay, FaAppStore, FaDownload, FaCheck } from 'react-icons/fa';
 import { SectionTitle } from '../ui/SectionTitle';
-import { Card } from '../ui/Card';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { portfolioData } from '../../config/portfolio.config';
