@@ -1,12 +1,12 @@
 // Navigation menu items configuration
 
 export const NAV_ITEMS = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Apps', href: '#apps' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Tech Stack', href: '#tech' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Apps', href: '/apps' },
+  { name: 'Store', href: '/store' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Contact', href: '/contact' }
 ] as const;
 
 // Filter types for App Store
