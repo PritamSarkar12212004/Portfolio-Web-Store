@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaHeart } from 'react-icons/fa';
-import { portfolioData } from '../../config/portfolio.config';
+import { portfolioData } from '../../data/main/portfolio.config';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();

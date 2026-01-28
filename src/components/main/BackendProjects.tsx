@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaServer } from 'react-icons/fa';
-import { SectionTitle } from '../ui/SectionTitle';
-import { Card } from '../ui/Card';
-import { Badge } from '../ui/Badge';
-import { Button } from '../ui/Button';
-import { portfolioData } from '../../config/portfolio.config';
-import { staggerContainer, staggerItem } from '../../utils/animations';
+import { SectionTitle } from '../custom/SectionTitle';
+import { Card } from '../custom/Card';
+import { Badge } from '../custom/Badge';
+import { Button } from '../custom/Button';
+import { portfolioData } from '../../data/main/portfolio.config';
+import { staggerContainer, staggerItem } from '../animation/Animation';
 
 export const BackendProjects = () => {
     return (

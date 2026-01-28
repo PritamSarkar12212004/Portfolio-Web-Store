@@ -1,4 +1,4 @@
-import { AppsShowcase } from '../components/sections/AppsShowcase';
+import { AppsShowcase } from '../../components/main/AppsShowcase';
 
 export const AppsPage = () => {
     return (

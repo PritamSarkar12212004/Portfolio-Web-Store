@@ -1,5 +1,5 @@
-import { About } from '../components/sections/About';
-import { TechStack } from '../components/sections/TechStack';
+import { About } from '../../components/main/About';
+import { TechStack } from '../../components/main/TechStack';
 
 export const AboutPage = () => {
     return (

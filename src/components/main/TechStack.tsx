@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { SectionTitle } from '../ui/SectionTitle';
-import { portfolioData } from '../../config/portfolio.config';
-import { ICON_MAP } from '../../constants/icons';
-import { staggerContainer, staggerItem } from '../../utils/animations';
+import { SectionTitle } from '../custom/SectionTitle';
+import { portfolioData } from '../../data/main/portfolio.config';
+import { ICON_MAP } from '../../const/icons';
+import { staggerContainer, staggerItem } from '../animation/Animation';
 
 export const TechStack = () => {
     return (

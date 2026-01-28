@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { NavLink, useLocation } from 'react-router-dom';
-import { NAV_ITEMS } from '../../constants/navigation';
+import { NAV_ITEMS } from '../../const/navigation';
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { SectionTitle } from '../ui/SectionTitle';
-import { portfolioData } from '../../config/portfolio.config';
-import { staggerContainer, staggerItem } from '../../utils/animations';
+import { SectionTitle } from '../custom/SectionTitle';
+import { portfolioData } from '../../data/main/portfolio.config';
+import { staggerContainer, staggerItem } from '../animation/Animation';
 
 export const About = () => {
     return (

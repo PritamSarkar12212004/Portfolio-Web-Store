@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaGooglePlay, FaDownload } from 'react-icons/fa';
-import { SectionTitle } from '../ui/SectionTitle';
-import { Badge } from '../ui/Badge';
-import { Button } from '../ui/Button';
-import { portfolioData } from '../../config/portfolio.config';
-import { staggerContainer, staggerItem } from '../../utils/animations';
-import type { App } from '../../types/portfolio.types';
+import { SectionTitle } from '../custom/SectionTitle';
+import { Badge } from '../custom/Badge';
+import { Button } from '../custom/Button';
+import { portfolioData } from '../../data/main/portfolio.config';
+import { staggerContainer, staggerItem } from '../animation/Animation';
+import type { App } from '../../data/types/portfolio.types';
 
 export const AppsShowcase = () => {
     return (

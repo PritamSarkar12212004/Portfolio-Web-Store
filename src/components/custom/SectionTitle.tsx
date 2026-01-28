@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { slideUp } from '../../utils/animations';
+import { slideUp } from '../animation/Animation';
 
 interface SectionTitleProps {
     title: string;

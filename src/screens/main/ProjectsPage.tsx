@@ -1,4 +1,4 @@
-import { BackendProjects } from '../components/sections/BackendProjects';
+import { BackendProjects } from '../../components/main/BackendProjects';
 
 export const ProjectsPage = () => {
     return (

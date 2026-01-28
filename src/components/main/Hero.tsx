@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../ui/Button';
-import { portfolioData } from '../../config/portfolio.config';
-import { fadeIn, slideUp } from '../../utils/animations';
+import { Button } from '../custom/Button';
+import { portfolioData } from '../../data/main/portfolio.config';
+import { fadeIn, slideUp } from '../animation/Animation';
 
 export const Hero = () => {
     const navigate = useNavigate();

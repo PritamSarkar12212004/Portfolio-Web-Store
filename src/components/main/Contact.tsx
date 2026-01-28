@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { HiCheckCircle } from 'react-icons/hi';
-import { SectionTitle } from '../ui/SectionTitle';
-import { Button } from '../ui/Button';
-import { portfolioData } from '../../config/portfolio.config';
-import { slideUp } from '../../utils/animations';
+import { SectionTitle } from '../custom/SectionTitle';
+import { Button } from '../custom/Button';
+import { portfolioData } from '../../data/main/portfolio.config';
+import { slideUp } from '../animation/Animation';
 
 export const Contact = () => {
     const [formData, setFormData] = useState({
