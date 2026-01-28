@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
-import { HiChevronDown } from 'react-icons/hi';
+import { HiArrowNarrowRight } from 'react-icons/hi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../ui/Button';
 import { portfolioData } from '../../config/portfolio.config';
-import { scrollToSection } from '../../utils/scroll';
 import { fadeIn, slideUp } from '../../utils/animations';
 
 export const Hero = () => {
+    const navigate = useNavigate();
+
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Animated Background */}
@@ -30,6 +32,27 @@ export const Hero = () => {
                     }}
                     transition={{ duration: 8, repeat: Infinity, delay: 1 }}
                 />
+
+                {/* Decorative floating dots */}
+                {[...Array(20)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        className="absolute w-1 h-1 bg-white/10 rounded-full"
+                        style={{
+                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 100}%`,
+                        }}
+                        animate={{
+                            y: [0, -20, 0],
+                            opacity: [0.2, 0.5, 0.2],
+                        }}
+                        transition={{
+                            duration: 3 + Math.random() * 2,
+                            repeat: Infinity,
+                            delay: Math.random() * 2,
+                        }}
+                    />
+                ))}
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-16">
@@ -80,12 +103,12 @@ export const Hero = () => {
                         initial="hidden"
                         animate="visible"
                         transition={{ delay: 0.6 }}
-                        className="flex flex-wrap items-center justify-center gap-4 mb-16"
+                        className="flex flex-wrap items-center justify-center gap-4"
                     >
-                        <Button onClick={() => scrollToSection('#apps')} size="lg">
-                            View My Apps
+                        <Button onClick={() => navigate('/apps')} size="lg" icon={<HiArrowNarrowRight className="ml-2" />}>
+                            Explore My Apps
                         </Button>
-                        <Button variant="outline" size="lg" href="#contact">
+                        <Button variant="outline" size="lg" onClick={() => navigate('/contact')}>
                             Get in Touch
                         </Button>
                         <div className="flex gap-3">
@@ -104,16 +127,6 @@ export const Hero = () => {
                                 LinkedIn
                             </Button>
                         </div>
-                    </motion.div>
-
-                    {/* Scroll Indicator */}
-                    <motion.div
-                        className="flex flex-col items-center gap-2 text-gray-500"
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                    >
-                        <span className="text-sm">Scroll to explore</span>
-                        <HiChevronDown size={24} />
                     </motion.div>
                 </div>
             </div>

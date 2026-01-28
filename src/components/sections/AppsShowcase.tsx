@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaGooglePlay, FaAppStore, FaDownload, FaCheck } from 'react-icons/fa';
+import { FaGooglePlay, FaDownload } from 'react-icons/fa';
 import { SectionTitle } from '../ui/SectionTitle';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
@@ -83,7 +83,7 @@ const AppCard = ({ app, index }: { app: App; index: number }) => {
                     <ul className="space-y-2">
                         {app.features.slice(0, 4).map((feature, i) => (
                             <li key={i} className="flex items-start gap-2 text-gray-300">
-                                <FaCheck className="text-accent-emerald mt-1 flex-shrink-0" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 flex-shrink-0" />
                                 <span>{feature}</span>
                             </li>
                         ))}
@@ -101,15 +101,6 @@ const AppCard = ({ app, index }: { app: App; index: number }) => {
                             Google Play
                         </Button>
                     )}
-                    {app.downloads.appStore && (
-                        <Button
-                            href={app.downloads.appStore}
-                            icon={<FaAppStore />}
-                            variant="secondary"
-                        >
-                            App Store
-                        </Button>
-                    )}
                     {app.downloads.apk && (
                         <Button
                             href={app.downloads.apk}
@@ -122,44 +113,82 @@ const AppCard = ({ app, index }: { app: App; index: number }) => {
                 </div>
             </div>
 
-            {/* Screenshot Carousel */}
+            {/* Premium Mobile Frame Carousel */}
             <motion.div
-                className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}
+                className={`relative group ${index % 2 === 1 ? 'lg:order-1' : ''}`}
                 style={{ y }}
             >
-                <div className="relative">
-                    {/* Horizontal Scroll Container */}
-                    <div className="overflow-x-auto hide-scrollbar pb-4">
-                        <div className="flex gap-4 min-w-max">
-                            {app.screenshots.map((screenshot, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="relative w-64 h-[480px] rounded-2xl overflow-hidden shadow-2xl"
-                                    initial={{ opacity: 0, x: 50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: i * 0.1 }}
-                                    viewport={{ once: true }}
-                                    whileHover={{ scale: 1.05, rotateY: 5 }}
-                                >
-                                    <div className="glass-strong h-full p-2">
-                                        <img
-                                            src={screenshot.url}
-                                            alt={screenshot.alt}
-                                            className="w-full h-full object-cover rounded-xl"
-                                        />
-                                    </div>
-                                    {/* Glow Effect */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent opacity-0 hover:opacity-100 smooth-transition" />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
+                <div className="relative overflow-hidden">
+                    {/* Animated Track */}
+                    <motion.div
+                        className="flex gap-12 w-max py-10"
+                        animate={{
+                            x: [0, "-50%"],
+                        }}
+                        transition={{
+                            duration: 40,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                    >
+                        {/* Double the items for seamless loop */}
+                        {[...app.screenshots, ...app.screenshots].map((screenshot, i) => (
+                            <div key={i} className="flex-shrink-0">
+                                <MobileFrame>
+                                    <img
+                                        src={screenshot.url}
+                                        alt={screenshot.alt}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </MobileFrame>
+                            </div>
+                        ))}
+                    </motion.div>
 
                     {/* Gradient Fade Edges */}
-                    <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-dark-900 to-transparent pointer-events-none" />
-                    <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-dark-900 to-transparent pointer-events-none" />
+                    <div className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-dark-900 via-dark-900/40 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute top-0 right-0 bottom-0 w-32 bg-gradient-to-l from-dark-900 via-dark-900/40 to-transparent z-10 pointer-events-none" />
                 </div>
             </motion.div>
+        </motion.div>
+    );
+};
+
+// Google Pixel 8 Inspired Mobile Frame Component
+const MobileFrame = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            whileHover={{ scale: 1.05, y: -10 }}
+            transition={{ duration: 0.5 }}
+            className="relative mx-auto w-[280px] h-[580px] bg-dark-800 rounded-[2.8rem] p-[10px] shadow-2xl border-[6px] border-[#3c4043] ring-1 ring-white/10"
+        >
+            {/* Pixel Punch Hole Camera */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-3 h-3 bg-dark-900 rounded-full z-20 border border-white/5" />
+
+            {/* Speaker Grill */}
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-1 bg-dark-700 rounded-full z-20 opacity-50" />
+
+            {/* Inner Screen */}
+            <div className="relative w-full h-full rounded-[2.2rem] overflow-hidden bg-dark-950 z-10 shadow-inner">
+                {children}
+                {/* Screen Reflection Map */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* Pixel Buttons (All on Right) */}
+            {/* Power Button */}
+            <div className="absolute -right-[8px] top-24 w-[3px] h-12 bg-[#3c4043] rounded-r-md border-r border-white/10" />
+            {/* Volume Rocker */}
+            <div className="absolute -right-[8px] top-44 w-[3px] h-24 bg-[#3c4043] rounded-r-md border-r border-white/10" />
+
+            {/* Antenna Lines (Subtle) */}
+            <div className="absolute top-12 -left-[6px] w-[2px] h-4 bg-white/5" />
+            <div className="absolute bottom-12 -right-[6px] w-[2px] h-4 bg-white/5" />
+
+            {/* Glossy Overlay/Screen Edge */}
+            <div className="absolute inset-[10px] border border-white/10 rounded-[2.2rem] pointer-events-none z-30 opacity-30" />
         </motion.div>
     );
 };
