@@ -21,7 +21,7 @@ export const About = () => {
                     className="mb-16"
                 >
                     <div className="max-w-4xl mx-auto">
-                        <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                        <p className="text-lg text-gray-300 leading-relaxed mb-6 text-center">
                             {portfolioData.about.introduction}
                         </p>
                     </div>
@@ -76,7 +76,7 @@ export const About = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto"
+                        className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto"
                     >
                         {portfolioData.about.skills.map((skill, index) => (
                             <motion.div
