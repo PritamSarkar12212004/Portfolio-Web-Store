@@ -27,6 +27,17 @@ import admin7 from '../assets/Projects/Tiffin wala admin/7.webp';
 import admin8 from '../assets/Projects/Tiffin wala admin/8.webp';
 import admin9 from '../assets/Projects/Tiffin wala admin/9.webp';
 
+// Import MyRaisoni Assets
+import raisoni1 from '../assets/Projects/MyRaisoni/1.webp';
+import raisoni2 from '../assets/Projects/MyRaisoni/2.webp';
+import raisoni3 from '../assets/Projects/MyRaisoni/3.webp';
+import raisoni4 from '../assets/Projects/MyRaisoni/4.webp';
+import raisoni6 from '../assets/Projects/MyRaisoni/6.webp';
+import raisoni7 from '../assets/Projects/MyRaisoni/7.webp';
+import raisoni8 from '../assets/Projects/MyRaisoni/8.webp';
+import raisoni9 from '../assets/Projects/MyRaisoni/9.webp';
+import raisoni10 from '../assets/Projects/MyRaisoni/10.webp';
+
 export const APPS: App[] = [
   {
     id: "nexamine",
@@ -144,5 +155,45 @@ export const APPS: App[] = [
     },
     category: "Premium",
     isPremium: true
+  },
+  {
+    id: "my-raisoni",
+    name: "MyRaisoni",
+    tagline: "The Ultimate Student Portal for G H Raisoni University",
+    description: "MyRaisoni is a comprehensive full-stack student portal designed for the G H Raisoni University community. Built using React Native and Expo, it provides students with a seamless interface to manage academic lives, track attendance, view exam schedules, and access university resources in real-time.",
+    screenshots: [
+      { url: raisoni1, alt: "MyRaisoni Login" },
+      { url: raisoni2, alt: "Academic Dashboard" },
+      { url: raisoni3, alt: "Attendance Tracking" },
+      { url: raisoni4, alt: "Exam Schedule" },
+      { url: raisoni6, alt: "Library Resources" },
+      { url: raisoni7, alt: "Campus News" },
+      { url: raisoni8, alt: "Student Profile" },
+      { url: raisoni9, alt: "Notifications Central" },
+      { url: raisoni10, alt: "Settings & Support" }
+    ],
+    features: [
+      "Real-time student data synchronization",
+      "Integrated attendance tracker",
+      "Exam schedule and result notifications",
+      "Digital library and resource access",
+      "Campus news and event updates",
+      "Secure student authentication"
+    ],
+    techStack: [
+      { name: "React Native", icon: "SiReact", color: "#61DAFB" },
+      { name: "Expo", icon: "SiExpo", color: "#000020" },
+      { name: "Tailwind CSS", icon: "SiTailwindcss", color: "#06B6D4" },
+      { name: "Redux Toolkit", icon: "SiRedux", color: "#764ABC" },
+      { name: "Node.js", icon: "SiNodedotjs", color: "#339933" },
+      { name: "MongoDB", icon: "SiMongodb", color: "#47A248" },
+      { name: "Firebase", icon: "SiFirebase", color: "#FFCA28" }
+    ],
+    downloads: {
+      playStore: "https://play.google.com/store",
+      apk: "https://example.com/myraisoni.apk"
+    },
+    category: "Free",
+    isPremium: false
   }
 ];
