@@ -15,6 +15,7 @@ export interface AppDownload {
   playStore?: string;
   appStore?: string;
   apk?: string;
+  github?: string;
 }
 
 export interface App {

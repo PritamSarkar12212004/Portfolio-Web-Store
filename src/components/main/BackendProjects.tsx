@@ -7,13 +7,13 @@ import { Button } from '../custom/Button';
 import { portfolioData } from '../../data/main/portfolio.config';
 import { staggerContainer, staggerItem } from '../animation/Animation';
 
-export const BackendProjects = () => {
+export const ProjectsAndServices = () => {
     return (
         <section id="projects" className="py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <SectionTitle
-                    title="Backend Projects"
-                    subtitle="Scalable server-side solutions and API development"
+                    title="Projects & Services"
+                    subtitle="Scalable solutions, backend engines, and specialized web applications"
                 />
 
                 <motion.div

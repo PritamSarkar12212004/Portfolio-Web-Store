@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaGooglePlay, FaDownload } from 'react-icons/fa';
+import { FaGooglePlay, FaGithub } from 'react-icons/fa';
 import { SectionTitle } from '../custom/SectionTitle';
 import { Badge } from '../custom/Badge';
 import { Button } from '../custom/Button';
@@ -101,13 +101,13 @@ const AppCard = ({ app, index }: { app: App; index: number }) => {
                             Google Play
                         </Button>
                     )}
-                    {app.downloads.apk && (
+                    {app.downloads.github && (
                         <Button
-                            href={app.downloads.apk}
-                            icon={<FaDownload />}
+                            href={app.downloads.github}
+                            icon={<FaGithub />}
                             variant="outline"
                         >
-                            Download APK
+                            Source Code
                         </Button>
                     )}
                 </div>

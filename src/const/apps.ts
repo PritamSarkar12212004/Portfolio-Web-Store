@@ -74,8 +74,7 @@ export const APPS: App[] = [
       { name: "RN Video & Audio", icon: "SiReact", color: "#FF0000" }
     ],
     downloads: {
-      playStore: "https://play.google.com/store",
-      apk: "https://example.com/nexamine.apk"
+      github: "https://github.com/PritamSarkar12212004/Database-Fronted.git"
     },
     category: "Premium",
     isPremium: true
@@ -111,8 +110,8 @@ export const APPS: App[] = [
       { name: "Stack & Tab Navigation", icon: "SiReact", color: "#4727D1" }
     ],
     downloads: {
-      playStore: "https://play.google.com/store",
-      apk: "https://example.com/tiffinwala.apk"
+      playStore: "https://play.google.com/store/apps/details?id=com.tiffinwalacli&pcampaignid=web_share",
+      github: "https://github.com/PritamSarkar12212004/TiffinWalaCli.git"
     },
     category: "Free",
     isPremium: false
@@ -151,7 +150,8 @@ export const APPS: App[] = [
       { name: "Lottie Animations", icon: "SiLottie", color: "#00D1FF" }
     ],
     downloads: {
-      apk: "https://example.com/tiffinwala-admin.apk"
+      playStore: "https://play.google.com/store/apps/details?id=com.tiffinwala.admin&pcampaignid=web_share",
+      github: "https://github.com/PritamSarkar12212004/TiffinWalaAdmin.git"
     },
     category: "Premium",
     isPremium: true
@@ -190,8 +190,7 @@ export const APPS: App[] = [
       { name: "Firebase", icon: "SiFirebase", color: "#FFCA28" }
     ],
     downloads: {
-      playStore: "https://play.google.com/store",
-      apk: "https://example.com/myraisoni.apk"
+      github: "https://github.com/PritamSarkar12212004/My_Raisno_cli.git"
     },
     category: "Free",
     isPremium: false

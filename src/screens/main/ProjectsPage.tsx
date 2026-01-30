@@ -1,9 +1,9 @@
-import { BackendProjects } from '../../components/main/BackendProjects';
+import { ProjectsAndServices } from '../../components/main/BackendProjects';
 
 export const ProjectsPage = () => {
     return (
         <main>
-            <BackendProjects />
+            <ProjectsAndServices />
         </main>
     );
 };

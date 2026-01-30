@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { FaCode } from 'react-icons/fa';
 import { NavLink, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from '../../const/navigation';
 
@@ -34,9 +35,10 @@ export const Navbar = () => {
                     <NavLink
                         to="/"
                         onClick={() => setIsOpen(false)}
-                        className="text-2xl font-heading font-bold gradient-text"
+                        className="text-2xl font-heading font-bold gradient-text flex items-center gap-2"
                     >
-                        Portfolio
+                        <FaCode className="text-primary-500" />
+                        <span>PritamDev</span>
                     </NavLink>
 
                     {/* Desktop Navigation */}
